@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Mohan Kumar Reddy | AWS & DevOps Engineer</title>
+  <meta name="description" content="Mohan Kumar Reddy's professional portfolio showcasing AWS Cloud, DevOps, CI/CD, Docker, Kubernetes and Terraform projects.">
 
   <style>
     * {
@@ -13,31 +15,59 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #0b1120;
       color: #f1f5f9;
       line-height: 1.7;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 8%;
-      background: #111827;
-      flex-wrap: wrap;
-      gap: 15px;
+    a {
+      text-decoration: none;
     }
 
-    header h2 {
+    .container {
+      width: 84%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 17, 32, 0.96);
+      border-bottom: 1px solid #263449;
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
       color: #38bdf8;
     }
 
+    nav {
+      display: flex;
+      gap: 23px;
+      flex-wrap: wrap;
+    }
+
     nav a {
-      color: #e2e8f0;
-      text-decoration: none;
-      margin-left: 18px;
+      color: #cbd5e1;
+      font-size: 14px;
     }
 
     nav a:hover {
@@ -45,103 +75,225 @@
     }
 
     .hero {
-      padding: 90px 8%;
-      background: linear-gradient(120deg, #0b1120, #142747);
+      padding: 105px 0 95px;
+      background:
+        radial-gradient(ellipse at 80% 30%, #153b65 0%, transparent 42%),
+        #0b1120;
     }
 
-    .tag {
-      color: #38bdf8;
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 13px;
+      color: #7dd3fc;
+      background: #102b45;
+      border: 1px solid #244c70;
+      border-radius: 30px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
       font-weight: bold;
-      letter-spacing: 2px;
     }
 
     h1 {
-      font-size: clamp(34px, 5vw, 54px);
-      line-height: 1.2;
-      margin: 20px 0;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.15;
+      margin: 25px 0;
+      letter-spacing: -1px;
+    }
+
+    .highlight {
+      color: #38bdf8;
     }
 
     .hero p {
-      color: #cbd5e1;
-      max-width: 650px;
-      margin-bottom: 25px;
+      max-width: 700px;
+      color: #b9c7d9;
+      font-size: 17px;
+      margin-bottom: 28px;
     }
 
-    .btn {
+    .button {
       display: inline-block;
-      padding: 12px 22px;
+      padding: 12px 20px;
       margin: 5px 8px 5px 0;
-      background: #0284c7;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
+      border: 1px solid #38bdf8;
+      border-radius: 7px;
+      color: #f8fafc;
+      font-size: 14px;
       font-weight: bold;
+      transition: 0.2s;
     }
 
-    .btn:hover {
-      background: #0369a1;
+    .button.primary {
+      background: #0284c7;
+    }
+
+    .button:hover {
+      background: #075985;
+      transform: translateY(-2px);
     }
 
     section {
-      padding: 55px 8%;
+      padding: 75px 0;
     }
 
-    h2.section-title {
-      color: #38bdf8;
+    .section-title {
       font-size: 30px;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
     }
 
-    .skills, .projects {
+    .section-intro {
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+
+    .about-text {
+      max-width: 850px;
+      color: #cbd5e1;
+      font-size: 16px;
+    }
+
+    .skills-grid,
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .card {
       background: #111c30;
-      border: 1px solid #263650;
-      padding: 22px;
+      border: 1px solid #263449;
       border-radius: 12px;
+      padding: 25px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      border-color: #38bdf8;
+      transform: translateY(-4px);
     }
 
     .card h3 {
       color: #7dd3fc;
-      margin-bottom: 10px;
+      font-size: 18px;
+      margin-bottom: 12px;
     }
 
-    .card p, .about p {
-      color: #cbd5e1;
+    .card p {
+      color: #b9c7d9;
+      font-size: 14px;
     }
 
-    .about {
-      max-width: 850px;
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px 8%;
-      background: #111827;
-      color: #cbd5e1;
+    .skill-tags span {
+      color: #bae6fd;
+      background: #142b43;
+      border: 1px solid #26435f;
+      padding: 6px 11px;
+      border-radius: 6px;
+      font-size: 13px;
     }
 
-    footer a {
+    .project-number {
       color: #38bdf8;
-      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .project-links a {
+      color: #38bdf8;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .project-links a:hover,
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #12243b, #111c30);
+      border: 1px solid #29425f;
+      border-radius: 14px;
+      padding: 35px;
+    }
+
+    .contact-box p {
+      color: #cbd5e1;
+      margin: 12px 0;
       overflow-wrap: anywhere;
     }
 
-    @media (max-width: 600px) {
-      header {
-        padding: 18px 5%;
+    .contact-links a {
+      color: #7dd3fc;
+    }
+
+    footer {
+      border-top: 1px solid #263449;
+      padding: 25px 0;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      .container {
+        width: 90%;
       }
 
-      nav a {
-        margin: 0 10px 0 0;
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .hero, section {
-        padding: 45px 5%;
+      .navbar {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .contact-box {
+        padding: 22px;
       }
     }
   </style>
@@ -150,101 +302,241 @@
 <body>
 
   <header>
-    <h2>Mohan Kumar Reddy</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container navbar">
+      <a class="logo" href="#home">Mohan Kumar Reddy</a>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <div class="hero">
-      <div class="tag">AWS CLOUD • DEVOPS ENGINEER</div>
+    <section class="hero" id="home">
+      <div class="container hero-content">
 
-      <h1>Building Reliable Cloud Infrastructure & CI/CD Pipelines</h1>
+        <span class="eyebrow">AWS CLOUD & DEVOPS</span>
 
-      <p>
-        Aspiring AWS and DevOps Engineer with hands-on practice in
-        cloud infrastructure, automation, containerization, CI/CD
-        pipelines, and monitoring.
-      </p>
+        <h1>
+          Building Reliable<br>
+          <span class="highlight">Cloud Infrastructure</span>
+          & CI/CD Pipelines
+        </h1>
 
-      <a class="btn" href="#projects">View My Projects</a>
-      <a class="btn" href="#contact">Contact Me</a>
-    </div>
+        <p>
+          Aspiring AWS & DevOps Engineer focused on cloud infrastructure,
+          automation, containerization, CI/CD pipelines and monitoring.
+          I build hands-on projects to develop practical engineering skills.
+        </p>
+
+        <a class="button primary" href="#projects">Explore My Projects ↗</a>
+        <a class="button" href="#contact">Contact Me</a>
+
+        <div class="skill-tags">
+          <span>AWS</span>
+          <span>Linux</span>
+          <span>Jenkins</span>
+          <span>Docker</span>
+          <span>Kubernetes</span>
+          <span>Terraform</span>
+        </div>
+
+      </div>
+    </section>
 
     <section id="about">
-      <h2 class="section-title">About Me</h2>
-      <div class="about">
-        <p>
-          I am building practical skills in AWS Cloud and DevOps by
-          working on hands-on projects. My learning focuses on deploying
-          applications, automating workflows, managing infrastructure
-          with code, and monitoring cloud resources.
-          I am looking for an opportunity to contribute, learn, and grow
-          as a Cloud or DevOps Engineer.
-        </p>
+      <div class="container">
+        <h2 class="section-title">About Me<span class="highlight">.</span></h2>
+        <p class="section-intro">My professional profile</p>
+
+        <div class="about-text">
+          <p>
+            I am an aspiring Cloud and DevOps Engineer developing hands-on
+            experience with AWS services, Linux administration, infrastructure
+            as code, container technologies and CI/CD automation.
+          </p>
+          <br>
+          <p>
+            Through practical projects, I am learning to deploy applications,
+            configure cloud networking, automate software delivery and monitor
+            application infrastructure. I am looking for an opportunity to
+            contribute to a technical team and continue growing my skills.
+          </p>
+        </div>
       </div>
     </section>
 
     <section id="skills">
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="skills">
-        <div class="card"><h3>AWS Cloud</h3><p>EC2, S3, VPC, IAM, ALB, CloudWatch</p></div>
-        <div class="card"><h3>CI/CD</h3><p>Git, GitHub, Jenkins, Pipeline Automation</p></div>
-        <div class="card"><h3>Containers</h3><p>Docker, Kubernetes</p></div>
-        <div class="card"><h3>Infrastructure as Code</h3><p>Terraform</p></div>
-        <div class="card"><h3>Operating Systems</h3><p>Linux, Windows, Bash basics</p></div>
-        <div class="card"><h3>Monitoring</h3><p>CloudWatch, Prometheus, Grafana</p></div>
+      <div class="container">
+        <h2 class="section-title">Technical Skills<span class="highlight">.</span></h2>
+        <p class="section-intro">Technologies I have practiced and am learning</p>
+
+        <div class="skills-grid">
+          <div class="card">
+            <h3>AWS Cloud</h3>
+            <p>Cloud infrastructure and networking fundamentals.</p>
+            <div class="skill-tags">
+              <span>EC2</span><span>S3</span><span>IAM</span>
+              <span>VPC</span><span>ALB</span><span>CloudWatch</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>CI/CD & Version Control</h3>
+            <p>Source control and build/deployment workflows.</p>
+            <div class="skill-tags">
+              <span>Git</span><span>GitHub</span><span>Jenkins</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Containers & Orchestration</h3>
+            <p>Container images and application deployment.</p>
+            <div class="skill-tags">
+              <span>Docker</span><span>Kubernetes</span><span>ECS</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Infrastructure as Code</h3>
+            <p>Defining and managing infrastructure through code.</p>
+            <div class="skill-tags">
+              <span>Terraform</span><span>HCL</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Operating Systems</h3>
+            <p>Command-line operations and basic administration.</p>
+            <div class="skill-tags">
+              <span>Linux</span><span>Bash Basics</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Monitoring & Logging</h3>
+            <p>Infrastructure metrics, dashboards and log analysis.</p>
+            <div class="skill-tags">
+              <span>CloudWatch</span><span>Prometheus</span>
+              <span>Grafana</span><span>ELK</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="projects">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects">
-        <div class="card">
-          <h3>AWS Load Balancer Project</h3>
-          <p>Practiced EC2 instances, target groups, load balancing, and health checks.</p>
+      <div class="container">
+        <h2 class="section-title">Featured Projects<span class="highlight">.</span></h2>
+        <p class="section-intro">
+          Practical projects demonstrating my learning and implementation.
+        </p>
+
+        <div class="projects-grid">
+
+          <div class="card">
+            <div class="project-number">PROJECT 01</div>
+            <h3>AWS Load Balancer & EC2</h3>
+            <p>
+              Practiced deploying web servers on EC2, configuring a target
+              group, setting up an Application Load Balancer and checking
+              target health.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/mohankumarreddy-career-afk"
+                 target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="#contact">Project Details ↗</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="project-number">PROJECT 02</div>
+            <h3>Jenkins CI/CD Pipeline</h3>
+            <p>
+              Practiced GitHub source control, Jenkins pipeline stages,
+              Docker image builds and application delivery workflows.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/mohankumarreddy-career-afk/DevOps-CICD-Project"
+                 target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="project-number">PROJECT 03</div>
+            <h3>Kubernetes Web Application</h3>
+            <p>
+              Practiced containerized application deployment using
+              Kubernetes Deployments, multiple replicas and a NodePort Service.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/mohankumarreddy-career-afk"
+                 target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+
         </div>
-        <div class="card">
-          <h3>Jenkins CI/CD Pipeline</h3>
-          <p>Worked on source control, pipeline stages, Docker builds, and deployment workflows.</p>
-        </div>
-        <div class="card">
-          <h3>Kubernetes Web Application</h3>
-          <p>Deployed a containerized web app using Kubernetes Deployment and NodePort Service.</p>
-        </div>
-        <div class="card">
-          <h3>Terraform Infrastructure</h3>
-          <p>Practiced defining and provisioning AWS networking resources using Terraform.</p>
-        </div>
+
+        <p style="color:#94a3b8; margin-top:22px; font-size:13px;">
+          Project descriptions reflect practice activities. Add verified
+          screenshots, source code and documentation before presenting each
+          project as completed.
+        </p>
       </div>
     </section>
 
     <section id="contact">
-      <h2 class="section-title">Contact Me</h2>
-      <p>Email:
-        <a href="mailto:mohankumarreddy.career@gmail.com">
-          mohankumarreddy.career@gmail.com
-        </a>
-      </p>
-      <p>GitHub:
-        <a href="https://github.com/mohankumarreddy-career-afk" target="_blank" rel="noopener noreferrer">
-          View My GitHub
-        </a>
-      </p>
-      <p>LinkedIn:
-        <a href="https://www.linkedin.com/in/mohan-kumar-reddy-4b035443b/" target="_blank" rel="noopener noreferrer">
-          View My LinkedIn
-        </a>
-      </p>
+      <div class="container">
+        <h2 class="section-title">Let's Connect<span class="highlight">.</span></h2>
+        <p class="section-intro">
+          Open to entry-level Cloud and DevOps opportunities.
+        </p>
+
+        <div class="contact-box">
+          <h3>Contact Information</h3>
+
+          <div class="contact-links">
+            <p>
+              Email:
+              <a href="mailto:mohankumarreddy.career@gmail.com">
+                mohankumarreddy.career@gmail.com
+              </a>
+            </p>
+
+            <p>
+              GitHub:
+              <a href="https://github.com/mohankumarreddy-career-afk"
+                 target="_blank" rel="noopener noreferrer">
+                View My GitHub Profile ↗
+              </a>
+            </p>
+
+            <p>
+              LinkedIn:
+              <a href="https://www.linkedin.com/in/mohan-kumar-reddy-4b035443b/"
+                 target="_blank" rel="noopener noreferrer">
+                View My LinkedIn Profile ↗
+              </a>
+            </p>
+          </div>
+
+          <a class="button primary"
+             href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohankumarreddy.career@gmail.com"
+             target="_blank" rel="noopener noreferrer">
+            Email Me ↗
+          </a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Mohan Kumar Reddy | AWS & DevOps Portfolio</p>
+    <div class="container">
+      <p>© 2026 Mohan Kumar Reddy | AWS Cloud & DevOps Portfolio</p>
+    </div>
   </footer>
 
 </body>
